@@ -24,6 +24,7 @@ class GunicornApplication(gunicorn.app.base.BaseApplication):
             "timeout": 0,
             "loglevel": "error",
             "limit_request_line": 0,
+            "worker_class": "gevent",
         }
         self.options.update(options)
         self.app = app
